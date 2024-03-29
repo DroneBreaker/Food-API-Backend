@@ -11,3 +11,18 @@ pub struct BuyPizzaRequest {
 pub struct UpdatePizza {
     pub uuid: String,
 }
+
+#[derive(Debug, Validate, Serialize, Deserialize)]
+pub struct Pizza {
+    pub pizza_name: String,
+    pub uuid: String
+}
+
+impl Pizza {
+    pub fn new(pizza_name: String, uuid: String) -> Pizza {
+        Pizza {
+            pizza_name,
+            uuid
+        }
+    }
+}
